@@ -20,19 +20,19 @@
       </div>
       <div class="col-6">
         <q-btn 
-        class="float-right q-mt-md q-mr-xl" 
-        v-bind:disable="id === 898" 
-        round 
-        color="primary" 
-        icon="arrow_right" 
-        v-on:click="id++">
+          class="float-right q-mt-md q-mr-xl" 
+          v-bind:disable="id === 898" 
+          round 
+          color="primary" 
+          icon="arrow_right" 
+          v-on:click="id++">
            <q-tooltip>{{$t('next')}}</q-tooltip>
         </q-btn>
       </div>
     </div>
     <div class="row justify-center full-width q-mt-xl">
       <q-input
-          v-model="search"
+          v-model.trim="search"
           filled
           autogrow 
           v-on:keyup.enter="getPokemonByName(search)"
@@ -91,6 +91,7 @@ export default class PokemonInfo extends Vue {
   }
 
   private getPokemonByName(name: string, voicer = false){
+    if(name === '') return
     this.$q.loading.show({
       spinnerColor: 'primary',
       spinnerSize: 100
