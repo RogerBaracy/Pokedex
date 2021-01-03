@@ -11,10 +11,18 @@
           @click="leftDrawerOpen = !leftDrawerOpen"
         />
 
-        <q-toolbar-title >
+        <q-toolbar-title class="mobile-hide">
           {{appName}}
         </q-toolbar-title>
-
+        <div class="q-mr-md">
+           <q-toggle
+              :label="$t('enable_dark')"
+              color="black"
+              v-bind:false-value="false"
+              v-bind:true-value="true"
+              v-model="isDark"
+            />
+        </div>
         <div><SwitchLanguage/></div>
       </q-toolbar>
     </q-header>
@@ -30,7 +38,7 @@
           header
           class="text-grey-8"
         >
-          Essential Links
+          {{appName}}
         </q-item-label>
         <EssentialLink
           v-for="link in essentialLinks"
@@ -49,25 +57,28 @@
 <script lang="ts">
 import EssentialLink from 'components/EssentialLink.vue'
 import SwitchLanguage from 'components/_partial/SwitchLanguage.vue'
-
-const linksData = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  },
- 
-];
-
-import { Vue, Component } from 'vue-property-decorator';
+import { Vue, Component, Watch } from 'vue-property-decorator';
 
 @Component({
   components: { EssentialLink, SwitchLanguage }
 })
 export default class MainLayout extends Vue {
   private appName = process.env.NAME;
+  private isDark = false;
   leftDrawerOpen = false;
-  essentialLinks = linksData;
+  essentialLinks = [
+    {
+      title: this.$t('github'),
+      caption: 'github.com/RogerBaracy/Pokedex',
+      icon: 'fab fa-github',
+      link: 'https://github.com/RogerBaracy/Pokedex'
+    }, 
+  ];
+
+
+  @Watch ('isDark')
+  changeIsDark(newValue: boolean) {
+    this.$q.dark.set(newValue)
+  }
 }
 </script>

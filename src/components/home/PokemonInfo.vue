@@ -35,9 +35,10 @@
           v-model="search"
           filled
           autogrow 
+          v-on:keyup.enter="getPokemonByName(search)"
         />
       <q-btn md color="primary" icon="search" v-model="name" v-on:click="getPokemonByName(search)"/>
-      <q-btn v-if="hasRecognition" md color="primary" icon="phone" v-model="name" v-on:click="listenVoicer()"/>
+      <q-btn class="q-ml-sm" v-if="hasRecognition" md color="primary" icon="mic" v-model="name" v-on:click="listenVoicer()"/>
     </div>
   </div>
 </template>
@@ -79,12 +80,17 @@ export default class PokemonInfo extends Vue {
     })
     .catch(error => {
       console.error(error);
+      this.$q.notify({
+        message: this.$t('not_found').toString(),
+        color: 'negative',
+        position: 'center'
+      })
     }).finally(() => {
       this.$q.loading.hide();
     })
   }
 
-  private getPokemonByName(name: string){
+  private getPokemonByName(name: string, voicer = false){
     this.$q.loading.show({
       spinnerColor: 'primary',
       spinnerSize: 100
@@ -98,13 +104,20 @@ export default class PokemonInfo extends Vue {
     })
     .catch(error => {
       console.error(error);
+      if(!voicer){
+          this.$q.notify({
+          message: this.$t('not_found').toString(),
+          color: 'negative',
+          position: 'center'
+        })
+      }      
     }).finally(() => {
       this.$q.loading.hide();
     })
   }
 
   private listenVoicer() { 
-    this.search = ''; 
+    this.search = this.$t('listen').toString(); 
     // @ts-ignore
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition(); 
@@ -112,10 +125,9 @@ export default class PokemonInfo extends Vue {
     recognition.lang = this.$i18n.locale;
     recognition.continuous = true;
     recognition.start();
-
+    var transcript = '';
     recognition.onresult = (event) => { 
-      if(event.results){
-        let transcript = '';
+      if(event.results){        
         for (let i = event.resultIndex; i < event.results.length; i++) {
           if(event.results[i].isFinal){          
             transcript = event.results[i][0].transcript.trim();
@@ -124,11 +136,11 @@ export default class PokemonInfo extends Vue {
           }
         }
         setTimeout(()=>{
-          this.search = transcript;
-          this.getPokemonByName(this.search);
-        }, 500)
-        recognition.stop();
-      }      
+          recognition.stop();
+          this.search = transcript; 
+          this.getPokemonByName(this.search, true);
+        }, 500); 
+      } 
     } 
   }
 
@@ -137,8 +149,3 @@ export default class PokemonInfo extends Vue {
   }
 }
 </script>
-<style lang="scss" scoped>
-  // .q-field__native {   
-  //   color: #fff
-  // }
-</style>

@@ -7,4 +7,8 @@ export default {
   select_lang: 'Selecione o idioma', 
   previous: 'Anterior',
   next: 'Próximo',
+  listen: 'Ouvindo ...',
+  github: 'GitHub',
+  not_found: 'Pokemon não encontrado',
+  enable_dark: 'Modo Escuro'
 };

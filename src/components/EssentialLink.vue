@@ -32,3 +32,12 @@ export default class EssentialLink extends Vue {
   @Prop({ type: String, default: ''}) readonly icon!: string;
 }
 </script>
+<style lang="scss" scope>
+.q-item--dark {
+    color: $primary;
+    border-color: rgba(255, 255, 255, 0.28);
+}
+.q-item--dark .q-item__label--caption {
+    color: rgb(169 70 70 / 80%);
+}
+</style>

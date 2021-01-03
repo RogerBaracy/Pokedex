@@ -33,9 +33,13 @@ export default class SwitchLanguage extends Vue {
   }   
 }
 </script>
-<style lang="scss" scoped>
-  // .q-field__native, .q-select__dropdown-icon {   
-  //   color:white
-  // }
+<style lang="scss" scope>
+  .q-select__dropdown-icon {   
+    color:white
+  }
+  .q-field--auto-height.q-field--labeled .q-field__native {
+    min-height: 24px;
+    color: white;
+}
 
 </style>
