@@ -1,42 +1,20 @@
 <template>
   <div>    
-    <div class="row justify-center">
-      <div class="col-12">
-        <h2 class="text-primary text-center" v-if="name">{{name}}</h2>
-      </div>
-        <q-img  v-bind:src="image" v-bind:alt="name" width="200px"/> 
-    </div>
-    <div class="row">
-      <div class="col-6">
-        <q-btn 
-          class="float-left q-mt-md q-ml-xl" 
-          v-bind:disable="id === 1" 
-          round 
-          color="primary" 
-          icon="arrow_left" 
-          v-on:click="id--">
-          <q-tooltip>{{$t('previous')}}</q-tooltip>
-        </q-btn>
-      </div>
-      <div class="col-6">
-        <q-btn 
-          class="float-right q-mt-md q-mr-xl" 
-          v-bind:disable="id === 898" 
-          round 
-          color="primary" 
-          icon="arrow_right" 
-          v-on:click="id++">
-           <q-tooltip>{{$t('next')}}</q-tooltip>
-        </q-btn>
-      </div>
-    </div>
+    <ShowPokemon 
+      v-bind:id.sync="id"
+      v-bind:name="name"
+      v-bind:image="image"
+      />
     <div class="row justify-center full-width q-mt-xl">
       <q-input
           v-model.trim="search"
+          v-bind:label="labelSearch"
           filled
           autogrow 
           v-on:keyup.enter="getPokemonByName(search)"
-        />
+        >
+          <q-tooltip>{{$t('toltip_search')}}</q-tooltip>
+        </q-input>
       <q-btn md color="primary" icon="search" v-model="name" v-on:click="getPokemonByName(search)"/>
       <q-btn class="q-ml-sm" v-if="hasRecognition" md color="primary" icon="mic" v-model="name" v-on:click="listenVoicer()"/>
     </div>
@@ -45,7 +23,12 @@
 
 <script lang="ts">
 import { Vue, Component, Watch } from 'vue-property-decorator'
-@Component
+import ShowPokemon from './ShowPokemon.vue'
+@Component({
+  components: {
+    ShowPokemon
+  }
+})
 export default class PokemonInfo extends Vue {
   private id  = 1;
   private name = '';
@@ -53,6 +36,7 @@ export default class PokemonInfo extends Vue {
   private search = '';
   private hasRecognition = false;
   private transcription = '';
+  private labelSearch = this.$t('label_search');
   mounted() {    
     this.getPokemonByID(this.id)
     //@ts-ignore  
@@ -118,7 +102,7 @@ export default class PokemonInfo extends Vue {
   }
 
   private listenVoicer() { 
-    this.search = this.$t('listen').toString(); 
+    this.labelSearch = this.$t('listen').toString(); 
     // @ts-ignore
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition(); 
@@ -138,6 +122,7 @@ export default class PokemonInfo extends Vue {
         }
         setTimeout(()=>{
           recognition.stop();
+          this.labelSearch = this.$t('label_search')
           this.search = transcript; 
           this.getPokemonByName(this.search, true);
         }, 500); 

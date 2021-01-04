@@ -10,5 +10,7 @@ export default {
   listen: 'Ouvindo ...',
   github: 'GitHub',
   not_found: 'Pokemon não encontrado',
-  enable_dark: 'Modo Escuro'
+  enable_dark: 'Modo Escuro',
+  label_search: 'Pesquise pelo nome',
+  toltip_search: 'Digite ou fale o nome de um pokemon'
 };
