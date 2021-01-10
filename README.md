@@ -4,7 +4,10 @@ A Quasar Framework app
 
 # Description
 ```
-https://pokeapi.co/ para buscar a imagem do Pokemon conforme o nome inserido no campo de busca, o nome pode ser inserido por texto ou voz* (Somente nos navegadores Chrome e Opera).
+Esse projeto trata-se de uma pagina web que utiliza a api
+[Pokéapi](https://pokeapi.co/) para buscar a imagem do Pokemon conforme 
+o nome inserido no campo de busca, o nome pode ser inserido por texto ou voz* 
+(Somente nos navegadores Chrome e Opera).
 ```
 # Demo
 See [rogerbaracy.github.io/Pokedex](https://rogerbaracy.github.io/Pokedex/#/)
