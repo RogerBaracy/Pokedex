@@ -66,12 +66,10 @@ module.exports = configure(function(ctx) {
 
       env: ctx.dev
         ? { // so on dev we'll have  
-          NAME: packageJson.productName,
-          API: 'https://pokeapi.co/api/v2/pokemon',
+          NAME: packageJson.productName
         }
         : { // and on build (production):
-          NAME: packageJson.productName,
-          API: 'https://pokeapi.co/api/v2/pokemon',
+          NAME: packageJson.productName
         },
 
       // https://quasar.dev/quasar-cli/handling-webpack
@@ -90,7 +88,7 @@ module.exports = configure(function(ctx) {
 
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer
     devServer: {
-      https: true,
+      https: false,
       port: 8080,
       open: false // opens browser window automatically
     },

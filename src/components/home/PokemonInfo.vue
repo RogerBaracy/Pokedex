@@ -8,7 +8,7 @@
     <div class="row justify-center full-width q-mt-xl">
       <q-input
           v-model.trim="search"
-          v-bind:label="labelSearch"
+          v-bind:label="textLabel"
           filled
           autogrow 
           v-on:keyup.enter="getPokemonByName(search)"
@@ -35,15 +35,16 @@ export default class PokemonInfo extends Vue {
   private image = '';
   private search = '';
   private hasRecognition = false;
-  private transcription = '';
-  private labelSearch = this.$t('label_search');
+  private transcription = ''; 
+  private textLabel = this.$t('label_search').toString();
+  
   mounted() {    
     this.getPokemonByID(this.id)
     //@ts-ignore  
      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
      SpeechRecognition
      ? this.hasRecognition = true 
-     : this.hasRecognition = false
+     : this.hasRecognition = false;
   }
 
   @Watch('id')
@@ -56,7 +57,7 @@ export default class PokemonInfo extends Vue {
       spinnerColor: 'primary',
       spinnerSize: 100
     });
-    this.$axios.get(`${process.env.API}/${id}`)
+    this.$axios.get(`${process.env.POKEAPI}/${id}`)
     .then(response => {
       this.name = this.capitalize(response.data.name)      
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -80,7 +81,7 @@ export default class PokemonInfo extends Vue {
       spinnerColor: 'primary',
       spinnerSize: 100
     });
-    this.$axios.get(`${process.env.API}/${name.toLowerCase()}`)
+    this.$axios.get(`${process.env.POKEAPI}/${name.toLowerCase()}`)
     .then(response => {
       this.name = this.capitalize(response.data.name) 
       this.id = parseInt(response.data.id)   
@@ -102,7 +103,7 @@ export default class PokemonInfo extends Vue {
   }
 
   private listenVoicer() { 
-    this.labelSearch = this.$t('listen').toString(); 
+    this.textLabel = this.$t('listen').toString();
     // @ts-ignore
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition(); 
@@ -122,7 +123,7 @@ export default class PokemonInfo extends Vue {
         }
         setTimeout(()=>{
           recognition.stop();
-          this.labelSearch = this.$t('label_search')
+          this.textLabel = this.$t('label_search').toString();
           this.search = transcript; 
           this.getPokemonByName(this.search, true);
         }, 500); 
@@ -132,6 +133,6 @@ export default class PokemonInfo extends Vue {
 
   private capitalize(str: string) {
     return str[0].toUpperCase() + str.substr(1);
-  }
+  }  
 }
 </script>
