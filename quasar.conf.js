@@ -88,7 +88,7 @@ module.exports = configure(function(ctx) {
 
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer
     devServer: {
-      https: false,
+      https: true,
       port: 8080,
       open: false // opens browser window automatically
     },
@@ -127,18 +127,22 @@ module.exports = configure(function(ctx) {
     // https://quasar.dev/quasar-cli/developing-pwa/configuring-pwa
     pwa: {
       workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
-      workboxOptions: {}, // only for GenerateSW
+      workboxOptions: {
+        skipWaiting: true,
+        clientsClaim: true
+      }, // only for GenerateSW
       manifest: {
         name: 'Pokedex App',
         short_name: 'Pokedex App',
         description: 'A Quasar Framework app',
         display: 'standalone',
         orientation: 'portrait',
-        background_color: '#ffffff',
-        theme_color: '#027be3',
+        background_color: '#d1d1d1',
+        theme_color: '#d6092e',
+        lang: 'pt-BR',
         icons: [
           {
-            src: 'icons/icon-128x128.png',
+            src: 'icons/favicon-128x128.png',
             sizes: '128x128',
             type: 'image/png'
           },
@@ -146,22 +150,7 @@ module.exports = configure(function(ctx) {
             src: 'icons/icon-192x192.png',
             sizes: '192x192',
             type: 'image/png'
-          },
-          {
-            src: 'icons/icon-256x256.png',
-            sizes: '256x256',
-            type: 'image/png'
-          },
-          {
-            src: 'icons/icon-384x384.png',
-            sizes: '384x384',
-            type: 'image/png'
-          },
-          {
-            src: 'icons/icon-512x512.png',
-            sizes: '512x512',
-            type: 'image/png'
-          }
+          }           
         ]
       }
     },

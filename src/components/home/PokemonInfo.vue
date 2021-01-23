@@ -8,15 +8,18 @@
     <div class="row justify-center full-width q-mt-xl">
       <q-input
           v-model.trim="search"
-          v-bind:label="textLabel"
-          filled
-          autogrow 
+          v-bind:label="$t('label_search').toString()"
+          filled           
           v-on:keyup.enter="getPokemonByName(search)"
         >
           <q-tooltip>{{$t('toltip_search')}}</q-tooltip>
         </q-input>
       <q-btn md color="primary" icon="search" v-model="name" v-on:click="getPokemonByName(search)"/>
-      <q-btn class="q-ml-sm" v-if="hasRecognition" md color="primary" icon="mic" v-model="name" v-on:click="listenVoicer()"/>
+      <q-btn v-if="hasRecognition" v-bind:loading="loading" class="q-ml-sm" md color="primary" icon="mic" v-model="name" v-on:click="listenVoicer()">
+         <template v-slot:loading>
+          <q-spinner-audio color="white"/>
+        </template>
+      </q-btn>
     </div>
   </div>
 </template>
@@ -35,8 +38,7 @@ export default class PokemonInfo extends Vue {
   private image = '';
   private search = '';
   private hasRecognition = false;
-  private transcription = ''; 
-  private textLabel = this.$t('label_search').toString();
+  private loading = false;
   
   mounted() {    
     this.getPokemonByID(this.id)
@@ -102,8 +104,8 @@ export default class PokemonInfo extends Vue {
     })
   }
 
-  private listenVoicer() { 
-    this.textLabel = this.$t('listen').toString();
+  private listenVoicer() {    
+    this.loading = true;
     // @ts-ignore
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition(); 
@@ -123,8 +125,8 @@ export default class PokemonInfo extends Vue {
         }
         setTimeout(()=>{
           recognition.stop();
-          this.textLabel = this.$t('label_search').toString();
           this.search = transcript; 
+          this.loading = false;
           this.getPokemonByName(this.search, true);
         }, 500); 
       } 
