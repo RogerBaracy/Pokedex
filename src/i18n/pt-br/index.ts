@@ -12,5 +12,6 @@ export default {
   not_found: 'Pokemon não encontrado',
   enable_dark: 'Modo Escuro',
   label_search: 'Pesquise pelo nome',
-  toltip_search: 'Digite ou fale o nome de um pokemon'
+  toltip_search: 'Digite ou fale o nome de um pokemon',
+  remove_favorite: 'Remover dos favoritos'
 };

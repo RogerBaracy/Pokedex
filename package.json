@@ -8,7 +8,9 @@
   "scripts": {
     "publish": "quasar build -m pwa && ./node_modules/.bin/gh-pages -d dist/pwa",
     "lint": "eslint --ext .js,.ts,.vue ./",
-    "test": "echo \"No test specified\" && exit 0"
+    "test": "echo \"No test specified\" && exit 0",
+    "dev": "quasar dev -m pwa",
+    "build": "quasar build -m pwa"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",

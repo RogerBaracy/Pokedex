@@ -12,18 +12,18 @@
         />
 
         <q-toolbar-title class="mobile-hide">
-          {{appName}}
+          {{ appName }}
         </q-toolbar-title>
         <div class="q-mr-md">
-           <q-toggle
-              :label="$t('enable_dark')"
-              color="black"
-              v-bind:false-value="false"
-              v-bind:true-value="true"
-              v-model="isDark"
-            />
+          <q-toggle
+            :label="$t('enable_dark')"
+            color="black"
+            v-bind:false-value="false"
+            v-bind:true-value="true"
+            v-model="isDark"
+          />
         </div>
-        <div><SwitchLanguage/></div>
+        <div><SwitchLanguage /></div>
       </q-toolbar>
     </q-header>
 
@@ -34,11 +34,8 @@
       content-class="bg-grey-1"
     >
       <q-list>
-        <q-item-label
-          header
-          class="text-grey-8"
-        >
-          {{appName}}
+        <q-item-label header class="text-grey-8">
+          {{ appName }}
         </q-item-label>
         <EssentialLink
           v-for="link in essentialLinks"
@@ -55,12 +52,12 @@
 </template>
 
 <script lang="ts">
-import EssentialLink from 'components/EssentialLink.vue'
-import SwitchLanguage from 'components/_partial/SwitchLanguage.vue'
+import EssentialLink from 'components/EssentialLink.vue';
+import SwitchLanguage from 'components/_partial/SwitchLanguage.vue';
 import { Vue, Component, Watch } from 'vue-property-decorator';
 
 @Component({
-  components: { EssentialLink, SwitchLanguage }
+  components: { EssentialLink, SwitchLanguage },
 })
 export default class MainLayout extends Vue {
   private appName = process.env.NAME;
@@ -71,14 +68,13 @@ export default class MainLayout extends Vue {
       title: this.$t('github'),
       caption: 'github.com/RogerBaracy/Pokedex',
       icon: 'fab fa-github',
-      link: 'https://github.com/RogerBaracy/Pokedex'
-    }, 
+      link: 'https://github.com/RogerBaracy/Pokedex',
+    },
   ];
 
-
-  @Watch ('isDark')
+  @Watch('isDark')
   changeIsDark(newValue: boolean) {
-    this.$q.dark.set(newValue)
+    this.$q.dark.set(newValue);
   }
 }
 </script>
