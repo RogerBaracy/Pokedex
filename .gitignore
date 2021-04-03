@@ -35,3 +35,11 @@ yarn-error.log*
 
 .env.dev
 .env.prod
+
+#testes
+/cypress/results/*
+/cypress/screenshots/*
+/cypress/videos/*
+
+#runner-actions-github
+/actions-runner

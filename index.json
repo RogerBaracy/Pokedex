@@ -1,0 +1,703 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 16,
+    "passes": 16,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-04-03T19:32:35.379Z",
+    "end": "2021-04-03T19:32:58.005Z",
+    "duration": 11331,
+    "testsRegistered": 16,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f82495f8-9aa3-47eb-a404-07f6e5a3e644",
+      "title": "",
+      "fullFile": "cypress/integration/Helpers.spec.ts",
+      "file": "cypress/integration/Helpers.spec.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3f1e5e04-7800-4e84-9810-310b5c623437",
+          "title": "Iniciando testes funcionais em home > helpers",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "df044823-7d06-4fcc-95b7-7e73a782bf60",
+              "title": "Iniciando teste na função capitalize",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Verificando se a função capitalize está retornando a string com a primeira letra maiúscula e o resto minúscula",
+                  "fullTitle": "Iniciando testes funcionais em home > helpers Iniciando teste na função capitalize Verificando se a função capitalize está retornando a string com a primeira letra maiúscula e o resto minúscula",
+                  "timedOut": null,
+                  "duration": 41,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "\"videos/Helpers.spec.ts.mp4\"",
+                  "code": "const strs = ['teste', 'TESTE', 'TeStE'];\nstrs.forEach(str => {\n    expect(Object(_src_components_home_helpers__WEBPACK_IMPORTED_MODULE_0__[\"capitalize\"])(str)).to.be.eql('Teste');\n});",
+                  "err": {},
+                  "uuid": "19ab49b8-ba5d-416e-a3e8-8dcd850b12c6",
+                  "parentUUID": "df044823-7d06-4fcc-95b7-7e73a782bf60",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "19ab49b8-ba5d-416e-a3e8-8dcd850b12c6"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 41,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "ecbe6fb9-007a-44a7-896a-b0a5af61f5e0",
+              "title": "Iniciando teste na função checkInArray",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Verificando se a função checkInArray está encontrando objetos através do id passado por parametro",
+                  "fullTitle": "Iniciando testes funcionais em home > helpers Iniciando teste na função checkInArray Verificando se a função checkInArray está encontrando objetos através do id passado por parametro",
+                  "timedOut": null,
+                  "duration": 24,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "\"videos/Helpers.spec.ts.mp4\"",
+                  "code": "const favorites = [\n    {\n        id: 1,\n        image: '',\n        name: 'Teste1'\n    },\n    {\n        id: 2,\n        image: '',\n        name: 'Teste2'\n    },\n    {\n        id: 3,\n        image: '',\n        name: 'Teste3'\n    },\n];\nfavorites.forEach(f => {\n    expect(Object(_src_components_home_helpers__WEBPACK_IMPORTED_MODULE_0__[\"checkInArray\"])(f.id, favorites)).to.be.true;\n});\nexpect(Object(_src_components_home_helpers__WEBPACK_IMPORTED_MODULE_0__[\"checkInArray\"])(45, favorites)).to.be.false;",
+                  "err": {},
+                  "uuid": "924746a1-1446-4bad-aa1e-7f26f7c36eb4",
+                  "parentUUID": "ecbe6fb9-007a-44a7-896a-b0a5af61f5e0",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "924746a1-1446-4bad-aa1e-7f26f7c36eb4"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 24,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "da51eb40-e0c3-40cc-9a25-e8f0659303ff",
+      "title": "",
+      "fullFile": "cypress/integration/Pokedex.spec.ts",
+      "file": "cypress/integration/Pokedex.spec.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "02e5cb8e-30d0-46b0-9494-2458aa1aae76",
+          "title": "Iniciando testes na aplicação Pokedex",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "915cdd38-9735-4044-aeb9-c160f6f8f39b",
+              "title": "Iniciando teste na Aplicação",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Verificando se a aplicação está rodando",
+                  "fullTitle": "Iniciando testes na aplicação Pokedex Iniciando teste na Aplicação Verificando se a aplicação está rodando",
+                  "timedOut": null,
+                  "duration": 2625,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "\"videos/Pokedex.spec.ts.mp4\"",
+                  "code": "cy.visit('/');\ncy.wait(1000);",
+                  "err": {},
+                  "uuid": "b34692e9-1f08-481b-8eff-d272093d06e1",
+                  "parentUUID": "915cdd38-9735-4044-aeb9-c160f6f8f39b",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Testando botão para alternar tema da aplicação",
+                  "fullTitle": "Iniciando testes na aplicação Pokedex Iniciando teste na Aplicação Testando botão para alternar tema da aplicação",
+                  "timedOut": null,
+                  "duration": 548,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "\"videos/Pokedex.spec.ts.mp4\"",
+                  "code": "cy.get('body').should('have.class', 'body--light');\ncy.get('[data-cy=alter-theme]').click();\ncy.get('body').should('have.class', 'body--dark');",
+                  "err": {},
+                  "uuid": "9eb502bd-f438-4712-9c6d-2baf3e53566b",
+                  "parentUUID": "915cdd38-9735-4044-aeb9-c160f6f8f39b",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "b34692e9-1f08-481b-8eff-d272093d06e1",
+                "9eb502bd-f438-4712-9c6d-2baf3e53566b"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 3173,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "1a57c639-1b20-4d7d-8b42-100bde81af5d",
+      "title": "",
+      "fullFile": "cypress/integration/PokeAPI.spec.ts",
+      "file": "cypress/integration/PokeAPI.spec.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1a0a073e-1e08-49d9-a25f-911aae98b043",
+          "title": "Testando a api PokeAPI",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "9f77100c-2602-49d4-baba-0fd28c328bda",
+              "title": "Testando as rotas da API",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Testando a rota https://pokeapi.co/api/v2/pokemon/pikachu",
+                  "fullTitle": "Testando a api PokeAPI Testando as rotas da API Testando a rota https://pokeapi.co/api/v2/pokemon/pikachu",
+                  "timedOut": null,
+                  "duration": 167,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "\"videos/PokeAPI.spec.ts.mp4\"",
+                  "code": "cy.request('GET', `${API}/${n}`).as(n);\n// Testa o status code do retorno\ncy.get(`@${n}`).its('status').should('eq', 200);\n// Verifica se há a propriedade id no retorno da API\ncy.get(`@${n}`).its('body').should('have.property', 'id');\n// Verifica se há a propriedade name no retorno da API\ncy.get(`@${n}`).its('body').should('have.property', 'name');\n// Verifica se há a propriedade front_default no retorno da API\ncy.get(`@${n}`).its('body')\n    .should('have.property', 'sprites')\n    .should('have.property', 'other')\n    .should('have.property', 'official-artwork')\n    .should('have.property', 'front_default');",
+                  "err": {},
+                  "uuid": "209f593f-c609-4daf-9c97-7862648bd1bd",
+                  "parentUUID": "9f77100c-2602-49d4-baba-0fd28c328bda",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Testando a rota https://pokeapi.co/api/v2/pokemon/ditto",
+                  "fullTitle": "Testando a api PokeAPI Testando as rotas da API Testando a rota https://pokeapi.co/api/v2/pokemon/ditto",
+                  "timedOut": null,
+                  "duration": 79,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "\"videos/PokeAPI.spec.ts.mp4\"",
+                  "code": "cy.request('GET', `${API}/${n}`).as(n);\n// Testa o status code do retorno\ncy.get(`@${n}`).its('status').should('eq', 200);\n// Verifica se há a propriedade id no retorno da API\ncy.get(`@${n}`).its('body').should('have.property', 'id');\n// Verifica se há a propriedade name no retorno da API\ncy.get(`@${n}`).its('body').should('have.property', 'name');\n// Verifica se há a propriedade front_default no retorno da API\ncy.get(`@${n}`).its('body')\n    .should('have.property', 'sprites')\n    .should('have.property', 'other')\n    .should('have.property', 'official-artwork')\n    .should('have.property', 'front_default');",
+                  "err": {},
+                  "uuid": "95335819-fe45-42ad-9468-996592b2e79b",
+                  "parentUUID": "9f77100c-2602-49d4-baba-0fd28c328bda",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Testando a rota https://pokeapi.co/api/v2/pokemon/abra",
+                  "fullTitle": "Testando a api PokeAPI Testando as rotas da API Testando a rota https://pokeapi.co/api/v2/pokemon/abra",
+                  "timedOut": null,
+                  "duration": 143,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "\"videos/PokeAPI.spec.ts.mp4\"",
+                  "code": "cy.request('GET', `${API}/${n}`).as(n);\n// Testa o status code do retorno\ncy.get(`@${n}`).its('status').should('eq', 200);\n// Verifica se há a propriedade id no retorno da API\ncy.get(`@${n}`).its('body').should('have.property', 'id');\n// Verifica se há a propriedade name no retorno da API\ncy.get(`@${n}`).its('body').should('have.property', 'name');\n// Verifica se há a propriedade front_default no retorno da API\ncy.get(`@${n}`).its('body')\n    .should('have.property', 'sprites')\n    .should('have.property', 'other')\n    .should('have.property', 'official-artwork')\n    .should('have.property', 'front_default');",
+                  "err": {},
+                  "uuid": "0ecf0acb-376d-4df8-b065-241a99f6db45",
+                  "parentUUID": "9f77100c-2602-49d4-baba-0fd28c328bda",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "209f593f-c609-4daf-9c97-7862648bd1bd",
+                "95335819-fe45-42ad-9468-996592b2e79b",
+                "0ecf0acb-376d-4df8-b065-241a99f6db45"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 389,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "2ece4cd1-f574-49a7-909f-e78fcd3f3f58",
+      "title": "",
+      "fullFile": "cypress/integration/PokemonInfo.spec.ts",
+      "file": "cypress/integration/PokemonInfo.spec.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6a5b5281-192f-4fd6-8de6-da8855f849d8",
+          "title": "Iniciando testes no componente PokemonInfo.vue",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "b064f8a1-6948-46fe-9e1b-7bd825a58d4f",
+              "title": "Acessando a rota / da aplicação",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Verificando se a rota / está funcionando",
+                  "fullTitle": "Iniciando testes no componente PokemonInfo.vue Acessando a rota / da aplicação Verificando se a rota / está funcionando",
+                  "timedOut": null,
+                  "duration": 2525,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "\"videos/PokemonInfo.spec.ts.mp4\"",
+                  "code": "cy.visit('/');\ncy.wait(1000);",
+                  "err": {},
+                  "uuid": "d85cd817-65d1-4726-a556-52b3d3801567",
+                  "parentUUID": "b064f8a1-6948-46fe-9e1b-7bd825a58d4f",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "d85cd817-65d1-4726-a556-52b3d3801567"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 2525,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "e9c8bb9a-ff53-482d-81f7-d9e4e9b0a621",
+              "title": "Montando o componente PokemonInfo",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Verificando se o componente está sendo renderizado",
+                  "fullTitle": "Iniciando testes no componente PokemonInfo.vue Montando o componente PokemonInfo Verificando se o componente está sendo renderizado",
+                  "timedOut": null,
+                  "duration": 40,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "\"videos/PokemonInfo.spec.ts.mp4\"",
+                  "code": "cy.get('[data-cy=component-pokemon-info]').should('exist');",
+                  "err": {},
+                  "uuid": "5ccba2e9-c268-4adb-a9e4-2724f06d756b",
+                  "parentUUID": "e9c8bb9a-ff53-482d-81f7-d9e4e9b0a621",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "5ccba2e9-c268-4adb-a9e4-2724f06d756b"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 40,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "4c310bdd-6a2f-4d40-afa2-5e4c80425b5e",
+              "title": "Pesquisando e adicionando Pokemons na lista de favoritos",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Pesquisando e adicionando o Pokemon Pikachu na lista de favoritos",
+                  "fullTitle": "Iniciando testes no componente PokemonInfo.vue Pesquisando e adicionando Pokemons na lista de favoritos Pesquisando e adicionando o Pokemon Pikachu na lista de favoritos",
+                  "timedOut": null,
+                  "duration": 1724,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "\"videos/PokemonInfo.spec.ts.mp4\"",
+                  "code": "cy.get('[data-cy=input-search]').focus().type(name);\ncy.get('[data-cy=btn-search]').click();\ncy.wait(1000);\ncy.get('[data-cy=name-pokemon]').contains(name);\ncy.get('[data-cy=btn-add-favorite]').click();\ncy.get('[data-cy=input-search]').clear();",
+                  "err": {},
+                  "uuid": "7fc626e2-2611-4638-82e5-42b43f8b6ab1",
+                  "parentUUID": "4c310bdd-6a2f-4d40-afa2-5e4c80425b5e",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Pesquisando e adicionando o Pokemon Ditto na lista de favoritos",
+                  "fullTitle": "Iniciando testes no componente PokemonInfo.vue Pesquisando e adicionando Pokemons na lista de favoritos Pesquisando e adicionando o Pokemon Ditto na lista de favoritos",
+                  "timedOut": null,
+                  "duration": 1650,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "\"videos/PokemonInfo.spec.ts.mp4\"",
+                  "code": "cy.get('[data-cy=input-search]').focus().type(name);\ncy.get('[data-cy=btn-search]').click();\ncy.wait(1000);\ncy.get('[data-cy=name-pokemon]').contains(name);\ncy.get('[data-cy=btn-add-favorite]').click();\ncy.get('[data-cy=input-search]').clear();",
+                  "err": {},
+                  "uuid": "6ff7af4b-6b27-4a28-b254-a20f20687c37",
+                  "parentUUID": "4c310bdd-6a2f-4d40-afa2-5e4c80425b5e",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Pesquisando e adicionando o Pokemon Abra na lista de favoritos",
+                  "fullTitle": "Iniciando testes no componente PokemonInfo.vue Pesquisando e adicionando Pokemons na lista de favoritos Pesquisando e adicionando o Pokemon Abra na lista de favoritos",
+                  "timedOut": null,
+                  "duration": 1644,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "\"videos/PokemonInfo.spec.ts.mp4\"",
+                  "code": "cy.get('[data-cy=input-search]').focus().type(name);\ncy.get('[data-cy=btn-search]').click();\ncy.wait(1000);\ncy.get('[data-cy=name-pokemon]').contains(name);\ncy.get('[data-cy=btn-add-favorite]').click();\ncy.get('[data-cy=input-search]').clear();",
+                  "err": {},
+                  "uuid": "24e8e4dc-05c0-469e-b448-ebcc38a052cd",
+                  "parentUUID": "4c310bdd-6a2f-4d40-afa2-5e4c80425b5e",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "7fc626e2-2611-4638-82e5-42b43f8b6ab1",
+                "6ff7af4b-6b27-4a28-b254-a20f20687c37",
+                "24e8e4dc-05c0-469e-b448-ebcc38a052cd"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 5018,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "8706ca8a-c3ff-44ce-b491-c2daed316412",
+          "title": "Iniciando testes no componente PokemonsFavorites.vue",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "58701104-9430-4c8c-9bca-dd130b6c0ac2",
+              "title": "Montando o componente PokemonsFavorites",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Verificando se o componente está sendo renderizado",
+                  "fullTitle": "Iniciando testes no componente PokemonsFavorites.vue Montando o componente PokemonsFavorites Verificando se o componente está sendo renderizado",
+                  "timedOut": null,
+                  "duration": 38,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "\"videos/PokemonInfo.spec.ts.mp4\"",
+                  "code": "cy.get('[data-cy=component-pokemons-favorites]').should('exist');",
+                  "err": {},
+                  "uuid": "cf57e9cc-36aa-44f9-8488-30fbb32aab37",
+                  "parentUUID": "58701104-9430-4c8c-9bca-dd130b6c0ac2",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "cf57e9cc-36aa-44f9-8488-30fbb32aab37"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 38,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "8f16c1c0-8db7-482a-a82e-e8ef68b34b43",
+              "title": "Verificando pokemons na lista de favoritos",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Verificando se o pokemon Pikachu está na lista de favoritos",
+                  "fullTitle": "Iniciando testes no componente PokemonsFavorites.vue Verificando pokemons na lista de favoritos Verificando se o pokemon Pikachu está na lista de favoritos",
+                  "timedOut": null,
+                  "duration": 23,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "\"videos/PokemonInfo.spec.ts.mp4\"",
+                  "code": "cy.get(`[data-cy=name-favorite-${name.toLowerCase()}]`).should('exist').contains(name);",
+                  "err": {},
+                  "uuid": "7ad74bf2-fd68-4aa9-a3b8-393f142a6cc5",
+                  "parentUUID": "8f16c1c0-8db7-482a-a82e-e8ef68b34b43",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Verificando se o pokemon Ditto está na lista de favoritos",
+                  "fullTitle": "Iniciando testes no componente PokemonsFavorites.vue Verificando pokemons na lista de favoritos Verificando se o pokemon Ditto está na lista de favoritos",
+                  "timedOut": null,
+                  "duration": 32,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "\"videos/PokemonInfo.spec.ts.mp4\"",
+                  "code": "cy.get(`[data-cy=name-favorite-${name.toLowerCase()}]`).should('exist').contains(name);",
+                  "err": {},
+                  "uuid": "5a74aad8-2294-409c-9ce9-20949d490e1f",
+                  "parentUUID": "8f16c1c0-8db7-482a-a82e-e8ef68b34b43",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Verificando se o pokemon Abra está na lista de favoritos",
+                  "fullTitle": "Iniciando testes no componente PokemonsFavorites.vue Verificando pokemons na lista de favoritos Verificando se o pokemon Abra está na lista de favoritos",
+                  "timedOut": null,
+                  "duration": 28,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "\"videos/PokemonInfo.spec.ts.mp4\"",
+                  "code": "cy.get(`[data-cy=name-favorite-${name.toLowerCase()}]`).should('exist').contains(name);",
+                  "err": {},
+                  "uuid": "dfad08ff-f860-477f-a32a-b1946f5e4799",
+                  "parentUUID": "8f16c1c0-8db7-482a-a82e-e8ef68b34b43",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "7ad74bf2-fd68-4aa9-a3b8-393f142a6cc5",
+                "5a74aad8-2294-409c-9ce9-20949d490e1f",
+                "dfad08ff-f860-477f-a32a-b1946f5e4799"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 83,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/json",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

@@ -8,9 +8,9 @@
   "scripts": {
     "publish": "quasar build && ./node_modules/.bin/gh-pages -d dist/pwa",
     "lint": "eslint --ext .js,.ts,.vue ./",
-    "test: chrome": "cypress run --browser chrome",
-    "report:merge": "mochawesome-merge cypress/results/json/*.json > index.json",
-    "report:generate": "marge index.json --reportDir public --assetsDir public/assets --reportPageTitle index.html",
+    "test:chrome": "cypress run --browser chrome",
+    "report:merge": "mochawesome-merge cypress/results/json/*.json > cypress/results/json/index.json",
+    "report:generate": "marge cypress/results/json/index.json --reportDir cypress/results/report/ --assetsDir cypress/results/report/assets --reportPageTitle index.html",
     "dev": "quasar dev",
     "build": "quasar build",
     "cypress:open": "cypress open -d",
