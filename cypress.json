@@ -1,5 +1,5 @@
 {
-    "baseUrl": "https://localhost:8080",
+    "baseUrl": "https://rogerbaracy.github.io/Pokedex/#/",
     "testFiles": [
         "Helpers.spec.ts",
         "Pokedex.spec.ts",
