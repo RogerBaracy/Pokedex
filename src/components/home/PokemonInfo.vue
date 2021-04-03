@@ -56,7 +56,7 @@ import {capitalize, checkInArray} from './helpers';
     ShowPokemon,
   },
 })
-export default class PokemonInfo extends Vue {
+export default class PokemonInfo extends Vue {  
   private id = 1;
   private name = '';
   private image = '';
@@ -103,6 +103,7 @@ export default class PokemonInfo extends Vue {
         });
       })
       .finally(() => {
+        
         this.$q.loading.hide();
       });
   }
@@ -133,6 +134,7 @@ export default class PokemonInfo extends Vue {
         }
       })
       .finally(() => {
+        
         this.$q.loading.hide();
       });
   }
