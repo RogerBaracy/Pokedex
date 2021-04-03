@@ -176,6 +176,7 @@ export default class PokemonInfo extends Vue {
   }
 
   private checkInFavorite(id: number){ 
+  
     return checkInArray(id, this._favorites);      
   }
 }
