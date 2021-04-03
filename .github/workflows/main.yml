@@ -1,16 +1,17 @@
-name: Custom container
+name: Cypress Tests
+
 on: [push]
+
 jobs:
   cypress-run:
-    runs-on: ubuntu-20.04
-    container: cypress/browsers:node12.13.0-chrome78-ff70
-    name: Tests inside custom image
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          browser: chrome
-          record: true
-          group: Tests on Chrome
+          build: npm run build
+          start: npm start
