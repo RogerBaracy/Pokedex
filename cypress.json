@@ -5,5 +5,9 @@
         "Pokedex.spec.ts",
         "PokeAPI.spec.ts",
         "PokemonInfo.spec.ts"        
-    ]
+    ],
+    "reporter": "cypress-multi-reporters",
+    "reporterOptions": {
+        "configFile": "reporter-config.json"
+    }
 }
