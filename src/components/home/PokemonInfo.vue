@@ -1,8 +1,9 @@
 <template>
-  <div>
+  <div data-cy="component-pokemon-info">
     <ShowPokemon v-bind:id.sync="id" v-bind:name="name" v-bind:image="image" />
     <div class="row justify-center full-width q-mt-xl">
       <q-input
+        data-cy="input-search"
         v-model.trim="search"
         v-bind:label="$t('label_search').toString()"
         filled
@@ -11,6 +12,7 @@
         <q-tooltip>{{ $t('toltip_search') }}</q-tooltip>
       </q-input>
       <q-btn
+        data-cy="btn-search"
         md
         color="primary"
         icon="search"
@@ -32,6 +34,7 @@
         </template>
       </q-btn>
       <q-btn
+        data-cy="btn-add-favorite"
         v-if="!checkInFavorite(id)"
         class="q-ml-sm"
         md
@@ -47,6 +50,7 @@
 import { Vue, Component, Watch, PropSync } from 'vue-property-decorator';
 import ShowPokemon from './ShowPokemon.vue';
 import {Ifavorite} from './models';
+import {capitalize, checkInArray} from './helpers';
 @Component({
   components: {
     ShowPokemon,
@@ -85,7 +89,7 @@ export default class PokemonInfo extends Vue {
     this.$axios
       .get(`${process.env.POKEAPI}/${id}`)
       .then(response => {
-        this.name = this.capitalize(response.data.name);
+        this.name = capitalize(response.data.name);
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         this.image =
           response.data.sprites.other['official-artwork'].front_default;
@@ -112,7 +116,7 @@ export default class PokemonInfo extends Vue {
     this.$axios
       .get(`${process.env.POKEAPI}/${name.toLowerCase()}`)
       .then(response => {
-        this.name = this.capitalize(response.data.name);
+        this.name = capitalize(response.data.name);
         this.id = parseInt(response.data.id);
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         this.image =
@@ -141,6 +145,7 @@ export default class PokemonInfo extends Vue {
     recognition.interimResults = true;
     recognition.lang = this.$i18n.locale;
     recognition.continuous = true;
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     recognition.start();
     var transcript = '';
     recognition.onresult = (event: any) => {
@@ -171,16 +176,7 @@ export default class PokemonInfo extends Vue {
   }
 
   private checkInFavorite(id: number){ 
-    if(this._favorites.length == 0) return false; 
-
-    const findId = this._favorites.find(f =>{
-      return f.id == id
-    })    
-    return findId? true : false;
-        
-  }
-  private capitalize(str: string) {
-    return str[0].toUpperCase() + str.substr(1);
+    return checkInArray(id, this._favorites);      
   }
 }
 </script>

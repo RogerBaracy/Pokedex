@@ -16,6 +16,7 @@
         </q-toolbar-title>
         <div class="q-mr-md">
           <q-toggle
+            data-cy="alter-theme"
             :label="$t('enable_dark')"
             color="black"
             v-bind:false-value="false"
