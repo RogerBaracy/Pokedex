@@ -15,12 +15,7 @@ jobs:
       - name: Install the project
         run: npm install     
       - name: execute mode dev  
-        run: quasar build &     
-  cypress-run:
-    runs-on: self-hosted
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+        run: quasar build &  
       - name: Cypress run
         uses: cypress-io/github-action@v2
       - name: Run tests
