@@ -1,6 +1,6 @@
 /// <reference types="Cypress"/>
 
-context('Iniciando testes na aplicação Pokedex', () => {
+context('Iniciando Testes Funcionais na aplicação Pokedex', () => {
   describe('Iniciando teste na Aplicação', () => {
     it('Verificando se a aplicação está rodando', () => {
       cy.visit('/');
