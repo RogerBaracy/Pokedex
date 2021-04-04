@@ -1,16 +1,20 @@
-name: Deploy Automatic
+name: Cypress
 on:
   push:
     branches:
       - 'master'
 jobs:    
   cypress-e2e-chrome81:
-    name: Test in prod
+    name: Cypress Test
     runs-on: self-hosted
     container: cypress/browsers:node12.16.2-chrome81-ff75
     steps:
       - uses: actions/checkout@v2
-      - name: Install a project with a clean slate
+      - name: Install the project
+        run: npm install
+      - name: execute mode dev  
+        run: quasar dev -p 3000
+      - name: Install a project with a clean slate  
         run: |
           npm ci
           $(npm bin)/cypress cache path
