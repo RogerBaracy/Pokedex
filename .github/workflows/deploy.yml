@@ -17,4 +17,7 @@ jobs:
       - name: Set Creds
         run: git config user.name "RogerBaracy" && git config user.email "rogerbaracy.s@gmail.com"     
       - name: Publish project in Github Page  
-        run: npm run deploy
+        run: npm run publish
+      - uses: actions/labeler@v2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
