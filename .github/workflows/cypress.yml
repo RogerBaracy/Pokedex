@@ -15,13 +15,7 @@ jobs:
         run: npm install     
       - name: execute mode dev  
         run: quasar dev & 
-      - uses: actions/checkout@v2
-      - name: Install a project with a clean slate  
-        run: |
-          npm ci
-          $(npm bin)/cypress cache path
-          $(npm bin)/cypress cache list
-          $(npm bin)/cypress verify
+      - uses: actions/checkout@v2      
       - name: Run Cypress tests
         run: npm run cypress:run
         continue-on-error: true
