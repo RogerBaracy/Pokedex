@@ -6,7 +6,7 @@ on:
 jobs:   
   cypress-run:
     runs-on: self-hosted
-    container: cypress/browsers:node12.18.3-chrome87-ff82
+    container: cypress/browsers:node12.18.3-chrome87-ff82    
     steps:
       - uses: actions/checkout@v2
       - name: Install Quasar/cli  
