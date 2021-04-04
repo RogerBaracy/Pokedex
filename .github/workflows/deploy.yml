@@ -15,4 +15,4 @@ jobs:
       - name: Install the project
         run: npm install     
       - name: Publish project in Github Page  
-        run: quasar publish 
+        run: npm run publish 

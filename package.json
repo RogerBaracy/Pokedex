@@ -6,7 +6,7 @@
   "author": "Roger Baracy <rogerbaracy.s@gmail.com>",
   "private": true,
   "scripts": {
-    "publish": "quasar build && ./node_modules/.bin/gh-pages -d dist/pwa",
+    "publish": "quasar build && ./node_modules/.bin/gh-pages -d dist/spa",
     "test:report": "./generate_report_test.sh",
     "lint": "eslint --ext .js,.ts,.vue ./",
     "test:chrome": "cypress run --browser chrome",
