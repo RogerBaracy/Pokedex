@@ -13,9 +13,7 @@ jobs:
       - name: Install Quasar/cli  
         run: npm install -g @quasar/cli
       - name: Install the project
-        run: npm install  
-      - name: Set Creds
-        run: git config user.name "RogerBaracy" && git config user.email "rogerbaracy.s@gmail.com"     
+        run: npm install 
       - name: Publish project in Github Page  
         run: npm run publish
       - uses: actions/labeler@v2
