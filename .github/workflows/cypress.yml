@@ -1,0 +1,33 @@
+name: Cypress
+on:
+  pull_request:
+    branches:
+      - 'master'      
+jobs: 
+  quasar:
+    name: Quasar dev
+    runs-on: self-hosted
+    container: node:12.16.2
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Quasar/cli  
+        run: npm install -g @quasar/cli
+      - name: Install the project
+        run: npm install     
+      - name: execute mode dev  
+        run: quasar build &     
+  cypress-e2e-chrome81:
+    name: Cypress Test
+    runs-on: self-hosted
+    container: cypress/browsers:node12.16.2-chrome81-ff75
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install a project with a clean slate  
+        run: |
+          npm ci
+          $(npm bin)/cypress cache path
+          $(npm bin)/cypress cache list
+          $(npm bin)/cypress verify
+      - name: Run Cypress tests
+        run: npm run test:chrome
+        continue-on-error: true
