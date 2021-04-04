@@ -12,16 +12,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      # Runs a single command using the runners shell
-      - name: permission in folder
-        run: chmod -R 777 *
-      # Runs a single command using the runners shell
-      - name: Install project
-        run: npm install
-
       # Runs a set of commands using the runners shell
-      - name: Deploy project
-        run: npm run publish
+      - name: Run Project
+        run: quasar dev
   cypress-e2e-chrome81:
     name: Test in prod
     runs-on: self-hosted
