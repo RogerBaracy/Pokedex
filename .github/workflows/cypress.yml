@@ -15,7 +15,14 @@ jobs:
       - name: Install the project
         run: npm install     
       - name: execute mode dev  
-        run: quasar build & 
+        run: quasar build &     
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
       - name: Run tests
-        run: npm run cypress:run      
-  
+        run: npm run cypress:run
+        continue-on-error: true
