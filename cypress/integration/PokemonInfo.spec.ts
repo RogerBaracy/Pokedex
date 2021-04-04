@@ -1,5 +1,6 @@
 /// <reference types="Cypress"/>
-context('Iniciando testes no componente PokemonInfo.vue', () => {
+
+context('Iniciando Testes Funcionais entre os componentes PokemonInfo.vue e PokemonsFavorites.vue', () => {
   const listNamesPokemons = ['Pikachu', 'Ditto', 'Abra'];
   describe('Acessando a rota / da aplicação', () => {
     it('Verificando se a rota / está funcionando', () => {

@@ -2,7 +2,7 @@
 import {Ifavorite} from '../../src/components/home/models';
 import {capitalize, checkInArray} from '../../src/components/home/helpers';
 
-context('Iniciando testes funcionais em home > helpers', () => {
+context('Iniciando Testes Unitários em home/helpers.ts', () => {
   describe('Iniciando teste na função capitalize', () => {
     it('Verificando se a função capitalize está retornando a string com a primeira letra maiúscula e o resto minúscula', () => {
       const strs = ['teste', 'TESTE', 'TeStE'];      
