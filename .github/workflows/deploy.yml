@@ -22,5 +22,5 @@ jobs:
           target_branch: gh-pages
           build_dir: dist/spa
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_REPO_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
