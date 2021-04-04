@@ -17,10 +17,10 @@ jobs:
       - name: Build project
         run: quasar build   
       - name: Publish project  
-        uses: Cecilapp/GitHub-Pages-deploy@v3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: crazy-max/ghaction-github-pages-@v1        
         with:
-          email: rogerbaracy.s@gmail.com
+          target_branch: gh-pages
           build_dir: dist/spa
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_REPO_TOKEN }}
       
