@@ -14,8 +14,7 @@ jobs:
       - name: Install the project
         run: npm install     
       - name: execute mode dev  
-        run: quasar dev & 
-      - uses: actions/checkout@v2      
+        run: quasar dev &  
       - name: Run Cypress tests
         run: npm run cypress:run
         continue-on-error: true
