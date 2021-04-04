@@ -41,14 +41,7 @@
         color="primary"
         icon="favorite"
         v-on:click="addFavorite(id, name, image)"
-      />   
-      <q-btn
-        data-cy="btn-home"        
-        class="q-ml-sm"
-        md
-        color="blue-8"
-        icon="home"        
-      />         
+      /> 
     </div>
   </div>
 </template>
