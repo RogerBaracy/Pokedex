@@ -10,8 +10,10 @@ jobs:
     container: cypress/browsers:node12.16.2-chrome81-ff75
     steps:
       - uses: actions/checkout@v2
+      - name: Install Quasar  
+        run: npm i quasar 
       - name: Install the project
-        run: npm install
+        run: npm install     
       - name: execute mode dev  
         run: quasar dev -p 3000
       - name: Install a project with a clean slate  
