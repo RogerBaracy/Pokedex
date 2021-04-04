@@ -16,7 +16,6 @@ jobs:
       - name: execute mode dev  
         run: quasar dev & 
       - name: Checkout
-      - uses: actions/checkout@v2
       - uses: cypress-io/github-action@v2
         with:
           browser: chrome
