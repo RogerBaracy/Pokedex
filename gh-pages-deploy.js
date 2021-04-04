@@ -9,7 +9,7 @@ void (async () => {
     await execa('npm', ['run', 'build']);
     // await execa("yarn", ["build"]);
     // Understand if it's dist or build folder
-    const folderName = existsSync('dist/spa') ? 'dist/spa' : 'build';
+    const folderName = existsSync('spa') ? 'spa' : 'build';
     await execa('git', ['--work-tree', folderName, 'add', '--all']);
     await execa('git', ['--work-tree', folderName, 'commit', '-m', 'gh-pages']);
     console.log('Pushing to gh-pages...');
