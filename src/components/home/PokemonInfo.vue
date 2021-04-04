@@ -103,7 +103,6 @@ export default class PokemonInfo extends Vue {
         });
       })
       .finally(() => {
-        
         this.$q.loading.hide();
       });
   }
