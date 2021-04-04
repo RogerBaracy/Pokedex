@@ -1,0 +1,34 @@
+name: Cypress
+on:
+  pull_request:
+    branches:
+      - 'master'      
+jobs:   
+  cypress-run:
+    runs-on: self-hosted
+    container: cypress/browsers:node12.18.3-chrome87-ff82    
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Quasar/cli  
+        run: npm install -g @quasar/cli
+      - name: Install the project
+        run: npm install     
+      - name: execute mode dev  
+        run: quasar dev & 
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        id: yarn-build-cache
+        with:
+          path: |
+            node_modules
+            ~/.cache/Cypress
+            build
+          key: ${{ runner.os }}-node_modules-build-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node_modules-build-
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          browser: firefox
+          build: yarn build
