@@ -29,6 +29,6 @@ jobs:
             ${{ runner.os }}-node_modules-build-
       - name: Cypress run
         uses: cypress-io/github-action@v2
+        run: npm run cypress:run
         with:
-          browser: firefox
           build: yarn build
