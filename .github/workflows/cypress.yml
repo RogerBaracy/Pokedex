@@ -14,7 +14,7 @@ jobs:
       - name: Install the project
         run: npm install     
       - name: execute mode dev  
-        run: quasar build & 
+        run: quasar dev & 
       - name: Checkout
         uses: actions/checkout@v2
       - uses: actions/cache@v2
