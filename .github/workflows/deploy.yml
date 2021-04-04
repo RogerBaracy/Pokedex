@@ -14,8 +14,9 @@ jobs:
         run: npm install -g @quasar/cli
       - name: Install the project
         run: npm install 
-      - name: Publish project in Github Page  
-        run: npm run publish
       - uses: actions/labeler@v2
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}  
+      - name: Publish project in Github Page  
+        run: npm run publish
+      
