@@ -1,0 +1,18 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - 'master'      
+jobs: 
+  deploy:
+    name: Quasar Publish
+    runs-on: self-hosted
+    container: node:12.16.2
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Quasar/cli  
+        run: npm install -g @quasar/cli
+      - name: Install the project
+        run: npm install     
+      - name: Publish project in Github Page  
+        run: quasar publish 
