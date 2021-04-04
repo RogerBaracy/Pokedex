@@ -12,11 +12,15 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install Quasar/cli  
         run: npm install -g @quasar/cli
-      - name: Install the project
+      - name: Install project
         run: npm install 
-      - uses: actions/labeler@v2
+      - name: Build project
+        run: quasar build   
+      - name: Publish project  
+        uses: Cecilapp/GitHub-Pages-deploy@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}  
-      - name: Publish project in Github Page  
-        run: npm run publish
+          email: rogerbaracy.s@gmail.com
+          build_dir: dist/spa
       
