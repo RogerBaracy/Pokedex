@@ -14,6 +14,7 @@
 <script lang="ts">
 import { Vue, Component, PropSync } from 'vue-property-decorator';
 import {Ifavorite} from 'components/home/models'
+
 @Component
 export default class PokemonsFavorites extends Vue {
   @PropSync('favorites', { type: Array })
