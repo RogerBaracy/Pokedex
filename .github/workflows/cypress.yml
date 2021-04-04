@@ -3,11 +3,12 @@ on:
   push:
     branches:
       - 'master'
-jobs:    
-  cypress-e2e-chrome81:
-    name: Cypress Test
+      
+jobs: 
+  quasar:
+    name: Quasar dev
     runs-on: self-hosted
-    container: cypress/browsers:node12.16.2-chrome81-ff75
+    container: node:12.16.2
     steps:
       - uses: actions/checkout@v2
       - name: Install Quasar/cli  
@@ -15,7 +16,13 @@ jobs:
       - name: Install the project
         run: npm install     
       - name: execute mode dev  
-        run: quasar dev -p 3000
+        run: quasar dev -p 3000      
+  cypress-e2e-chrome81:
+    name: Cypress Test
+    runs-on: self-hosted
+    container: cypress/browsers:node12.16.2-chrome81-ff75
+    steps:
+      - uses: actions/checkout@v2
       - name: Install a project with a clean slate  
         run: |
           npm ci
