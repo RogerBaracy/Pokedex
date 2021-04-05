@@ -1,10 +1,9 @@
 {
     "baseUrl": "http://localhost:8080",
     "testFiles": [
-        "Helpers.spec.ts",
-        "Pokedex.spec.ts",
+        "Helpers.spec.ts",        
         "PokeAPI.spec.ts",
-        "PokemonInfo.spec.ts"        
+        "Home.spec.ts"     
     ],
     "reporter": "cypress-multi-reporters",
     "reporterOptions": {
