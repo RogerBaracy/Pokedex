@@ -4,8 +4,7 @@
       <div v-for="(f, index) in _favorites" v-bind:key="index" class="q-ma-xl">         
         <q-img v-bind:src="f.image" v-bind:alt="f.name" width="50px"/>
         <q-icon name="delete_outline" size="xs" v-on:click="deleteFavorite(f.id)" class="pointer" color="primary" v-bind:title="$t('remove_favorite')"/>
-        <p v-bind:data-cy="`name-favorite-${f.name.toLowerCase()}`" class="text-primary text-center">{{ f.name }}</p>
-        
+        <p v-bind:data-cy="`name-favorite-${f.name.toLowerCase()}`" class="text-primary text-center">{{ f.name }}</p>        
       </div>      
     </div>
   </div>
