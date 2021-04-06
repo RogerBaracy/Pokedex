@@ -41,7 +41,7 @@
         color="primary"
         icon="favorite"
         v-on:click="addFavorite(id, name, image)"
-      /> 
+      />
     </div>
   </div>
 </template>
@@ -49,14 +49,14 @@
 <script lang="ts">
 import { Vue, Component, Watch, PropSync } from 'vue-property-decorator';
 import ShowPokemon from './ShowPokemon.vue';
-import {Ifavorite} from './models';
-import {capitalize, checkInArray} from './helpers';
+import { Ifavorite } from './models';
+import { capitalize, checkInArray } from './helpers';
 @Component({
   components: {
     ShowPokemon,
   },
 })
-export default class PokemonInfo extends Vue {  
+export default class PokemonInfo extends Vue {
   private id = 1;
   private name = '';
   private image = '';
@@ -69,8 +69,10 @@ export default class PokemonInfo extends Vue {
 
   mounted() {
     this.getPokemonByID(this.id);
-    //@ts-ignore
-    const SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
+
+    const SpeechRecognition =
+      //@ts-ignore
+      window.webkitSpeechRecognition || window.SpeechRecognition;
     SpeechRecognition
       ? (this.hasRecognition = true)
       : (this.hasRecognition = false);
@@ -133,15 +135,16 @@ export default class PokemonInfo extends Vue {
         }
       })
       .finally(() => {
-        
         this.$q.loading.hide();
       });
   }
 
   private listenVoicer() {
     this.loading = true;
-    // @ts-ignore
-    const SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
+
+    const SpeechRecognition =
+      // @ts-ignore
+      window.webkitSpeechRecognition || window.SpeechRecognition;
     const recognition = new SpeechRecognition();
     recognition.interimResults = true;
     recognition.lang = this.$i18n.locale;
@@ -168,16 +171,16 @@ export default class PokemonInfo extends Vue {
     };
   }
 
-  private addFavorite(id: number, name: string, image: string){
+  private addFavorite(id: number, name: string, image: string) {
     this._favorites.push({
       id: id,
       name: name,
-      image: image
-    })
+      image: image,
+    });
   }
 
-  private checkInFavorite(id: number){   
-    return checkInArray(id, this._favorites);      
+  private checkInFavorite(id: number) {
+    return checkInArray(id, this._favorites);
   }
 }
 </script>

@@ -2,7 +2,9 @@
   <div>
     <div class="row justify-center">
       <div class="col-12">
-        <h2 data-cy="name-pokemon" class="text-primary text-center" v-if="name">{{ name }}</h2>
+        <h2 data-cy="name-pokemon" class="text-primary text-center" v-if="name">
+          {{ name }}
+        </h2>
       </div>
       <q-img v-bind:src="image" v-bind:alt="name" width="200px" />
     </div>
