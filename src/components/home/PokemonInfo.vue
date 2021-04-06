@@ -90,7 +90,7 @@ export default class PokemonInfo extends Vue {
     });
     this.$axios
       //.get(`${process.env.POKEAPI}/${id}`)
-      .get(`https://pokeapi.co/api/v2/pokemon/${id}`)      
+      .get(`https://pokeapi.co/api/v2/pokemon/${id}`)
       .then(response => {
         this.name = capitalize(response.data.name);
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
