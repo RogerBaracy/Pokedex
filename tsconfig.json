@@ -3,7 +3,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "experimentalDecorators": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "target": "es5",
+    "lib": ["es5", "dom"],
+    "types": ["cypress"]
   },
+  "include": ["**/*.ts"],
   "exclude": ["node_modules", "actions-runner"]
 }

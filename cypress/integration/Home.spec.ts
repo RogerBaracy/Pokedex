@@ -1,6 +1,9 @@
 /// <reference types='Cypress'/>
 import Home from '../pages/home/Home';
 
+// import { mount } from '@cypress/vue';
+// import PokemonInfo from '../../src/components/home/PokemonInfo.vue';
+
 context('Iniciando Testes na Page Home da aplicação Pokedex', () => {
   const home = new Home();
   describe('Iniciando teste na Aplicação', () => {
@@ -8,6 +11,7 @@ context('Iniciando Testes na Page Home da aplicação Pokedex', () => {
       home.isOnLine();
     });
     it('O botão "data-cy=alter-theme" deve alternar o tema da aplicação ao ser clicado', () => {
+      // mount(PokemonInfo);
       home.alterTheme();
     });
   });
