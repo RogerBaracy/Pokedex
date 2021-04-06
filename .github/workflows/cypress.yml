@@ -5,7 +5,7 @@ on:
       - 'master'      
 jobs:   
   cypress-run:
-    runs-on: self-hosted
+    runs-on: ubuntu-20.04
     container: cypress/browsers:node12.18.3-chrome87-ff82    
     steps:
       - uses: actions/checkout@v2
