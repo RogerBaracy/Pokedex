@@ -16,7 +16,9 @@ jobs:
       - name: Check Style
         run: npm run lint --fix      
       - name: execute mode dev  
-        run: quasar dev &  
+        run: quasar dev & 
+        env: 
+          process.env.POKEAPI: ${{ env.POKEAPI }}  
       - name: Run Cypress tests
         run: npm run cypress:run
         continue-on-error: true
