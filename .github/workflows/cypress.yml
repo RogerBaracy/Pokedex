@@ -18,7 +18,7 @@ jobs:
       - name: execute mode dev  
         run: quasar dev & 
         env: 
-          process.env.POKEAPI: ${{ env.POKEAPI }}  
+          process.env.POKEAPI: ${{POKEAPI}}  
       - name: Run Cypress tests
         run: npm run cypress:run
         continue-on-error: true

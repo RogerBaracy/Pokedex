@@ -17,7 +17,7 @@ jobs:
       - name: Build project
         run: quasar build  
         env: 
-          process.env.POKEAPI: ${{ env.POKEAPI }} 
+          process.env.POKEAPI: ${{POKEAPI}} 
       - name: Publish project  
         uses: crazy-max/ghaction-github-pages@v2        
         with:
