@@ -16,7 +16,7 @@ jobs:
         run: npm install 
       - name: Build project
         run: quasar build  
-        env: 
+        with: 
           process.env.POKEAPI: ${{secrets.POKEAPI}} 
       - name: Publish project  
         uses: crazy-max/ghaction-github-pages@v2        
