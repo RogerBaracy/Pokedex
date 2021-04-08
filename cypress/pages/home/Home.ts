@@ -2,9 +2,9 @@ import { ELEMENTS as e } from './model';
 const listNamesPokemons = ['Pikachu', 'Ditto', 'Abra'];
 
 export default class Home {
-  public isOnLine(): void {    
+  public isOnLine(): void {
     cy.visit('/');
-    cy.wait('2000');
+    cy.wait(2000);
     cy.title().should('equal', 'Pokedex App');
   }
 
