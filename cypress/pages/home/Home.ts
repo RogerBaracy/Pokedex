@@ -4,7 +4,7 @@ const listNamesPokemons = ['Pikachu', 'Ditto', 'Abra'];
 export default class Home {
   public isOnLine(): void{
     cy.visit('/');
-    cy.wait(1000);
+    cy.title().should('equal', 'Pokedex App');
   }
 
   public alterTheme(): void {
@@ -22,8 +22,7 @@ export default class Home {
       it(`Pesquisando e adicionando o Pokemon ${name} na lista de favoritos`, () => {      
         cy.get(e.inputSearch).focus().type(name);
         cy.get(e.btnSearch).click();
-        cy.wait(1000);
-        cy.get(e.namePokemon).contains(name);
+        cy.get(e.namePokemon, {timeout:1000}).contains(name);
         cy.get(e.btnAddFavorite).click();
         cy.get(e.inputSearch).clear();
       });

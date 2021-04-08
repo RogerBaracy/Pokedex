@@ -89,8 +89,7 @@ export default class PokemonInfo extends Vue {
       spinnerSize: 100,
     });
     this.$axios
-      //.get(`${process.env.POKEAPI}/${id}`)
-      .get(`https://pokeapi.co/api/v2/pokemon/${id}`)
+      .get(`${process.env.POKEAPI}/${id}`)
       .then(response => {
         this.name = capitalize(response.data.name);
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -117,8 +116,7 @@ export default class PokemonInfo extends Vue {
       spinnerSize: 100,
     });
     this.$axios
-      //.get(`${process.env.POKEAPI}/${name.toLowerCase()}`)
-      .get(`https://pokeapi.co/api/v2/pokemon/${name.toLowerCase()}`)
+      .get(`${process.env.POKEAPI}/${name.toLowerCase()}`)
       .then(response => {
         this.name = capitalize(response.data.name);
         this.id = parseInt(response.data.id);
