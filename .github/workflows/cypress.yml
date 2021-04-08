@@ -9,7 +9,7 @@ jobs:
     container: cypress/browsers:node12.18.3-chrome87-ff82    
     steps:
       - uses: actions/checkout@v2
-        with: 
+        env: 
           process.env.POKEAPI: ${{secrets.POKEAPI}} 
       - name: Install Quasar/cli  
         run: npm install -g @quasar/cli
