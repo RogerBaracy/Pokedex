@@ -9,6 +9,8 @@ jobs:
     container: cypress/browsers:node12.18.3-chrome87-ff82    
     steps:
       - uses: actions/checkout@v2
+        with: 
+          process.env.POKEAPI: ${{secrets.POKEAPI}} 
       - name: Install Quasar/cli  
         run: npm install -g @quasar/cli
       - name: Install the project
@@ -16,9 +18,7 @@ jobs:
       - name: Check Style
         run: npm run lint --fix      
       - name: execute mode dev  
-        run: quasar dev & 
-        with: 
-          process.env.POKEAPI: ${{secrets.POKEAPI}}  
+        run: quasar dev &          
       - name: Run Cypress tests
         run: npm run cypress:run
         continue-on-error: true
