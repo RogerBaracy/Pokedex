@@ -14,10 +14,10 @@ jobs:
         run: npm install -g @quasar/cli
       - name: Install project
         run: npm install 
-      - name: Build project
-        run: quasar build 
-        env: 
-          process.env.POKEAPI: ${{ secrets.POKEAPI }}
+      - name: Create .env.prod
+        run: echo 'POKEAPI:'${{ secrets.POKEAPI }} >> .env.prod
+      - name: Build project         
+        run: quasar build         
       - name: Publish project  
         uses: crazy-max/ghaction-github-pages@v2        
         with:

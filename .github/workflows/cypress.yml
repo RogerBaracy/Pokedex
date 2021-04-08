@@ -14,11 +14,11 @@ jobs:
       - name: Install the project
         run: npm install  
       - name: Check Style
-        run: npm run lint --fix      
+        run: npm run lint --fix  
+      - name: Create .env.dev
+        run: echo 'POKEAPI:'${{ secrets.POKEAPI }} >> .env.dev    
       - name: execute mode dev  
-        run: quasar dev & 
-        env: 
-          process.env.POKEAPI: ${{ secrets.POKEAPI }}         
+        run: quasar dev &                
       - name: Run Cypress tests
         run: npm run cypress:run
         continue-on-error: true
