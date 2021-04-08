@@ -10,7 +10,7 @@ context('Testando a api PokeAPI', () => {
       it(`Testando a rota ${API}/${n}`, () => { 
           cy.request('GET',`${API}/${n}`).as(n);
           // Testa o status code do retorno
-          cy.get(`@${n}`).its('status').should('eq',200);
+          cy.get(`@${n}`).its('status').should('equal',200);
           // Verifica se há a propriedade id no retorno da API
           cy.get(`@${n}`).its('body').should('have.property', 'id');
           // Verifica se há a propriedade name no retorno da API

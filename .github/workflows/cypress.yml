@@ -12,7 +12,9 @@ jobs:
       - name: Install Quasar/cli  
         run: npm install -g @quasar/cli
       - name: Install the project
-        run: npm install     
+        run: npm install  
+      - name: Check Style
+        run: lint --fix      
       - name: execute mode dev  
         run: quasar dev &  
       - name: Run Cypress tests
