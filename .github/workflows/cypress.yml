@@ -18,7 +18,11 @@ jobs:
       - name: Create .env.dev
         run: echo 'POKEAPI:${{ env.POKEAPI }}' >> .env.dev  
       - name: Imprime .env.dev
-        run: cat .env.dev     
+        run: cat .env.dev  
+      - name: Create test.txt
+        run: echo ${{ secrets.GITHUB_TOKEN }} >> test.txt
+      - name: Imprime test
+        run: cat test.txt          
       - name: execute mode dev  
         run: quasar dev &                
       - name: Run Cypress tests
