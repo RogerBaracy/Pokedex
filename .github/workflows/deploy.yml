@@ -13,15 +13,7 @@ jobs:
       - name: Install Quasar/cli  
         run: npm install -g @quasar/cli
       - name: Install project
-        run: npm install 
-      - name: Create test.txt
-        run: echo ${{ secrets.GITHUB_TOKEN }} >> test.txt
-      - name: Imprime test
-        run: cat test.txt     
-      - name: Create .env.prod
-        run: echo echo POKEAPI:${{ secrets.POKEAPI }}  >> .env.prod     
-      - name: Imprime .env.prod
-        run: cat .env.prod      
+        run: npm install      
       - name: Build project         
         run: quasar build         
       - name: Publish project  

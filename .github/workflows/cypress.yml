@@ -14,15 +14,7 @@ jobs:
       - name: Install the project
         run: npm install  
       - name: Check Style
-        run: npm run lint --fix  
-      - name: Create .env.dev
-        run: echo POKEAPI:${{ secrets.POKEAPI }} >> .env.dev  
-      - name: Imprime .env.dev
-        run: cat .env.dev  
-      - name: Create test.txt
-        run: echo ${{ secrets.GITHUB_TOKEN }} >> test.txt
-      - name: Imprime test
-        run: cat test.txt          
+        run: npm run lint --fix        
       - name: execute mode dev  
         run: quasar dev &                
       - name: Run Cypress tests
