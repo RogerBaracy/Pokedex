@@ -15,7 +15,7 @@ jobs:
       - name: Install project
         run: npm install 
       - name: Create .env.prod
-        run: echo 'POKEAPI:${{ secrets.POKEAPI }}' >> .env.prod
+        run: echo 'POKEAPI:${{ env.POKEAPI }}' >> .env.prod
       - name: Imprime .env.prod
         run: cat .env.prod      
       - name: Build project         

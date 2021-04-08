@@ -16,7 +16,7 @@ jobs:
       - name: Check Style
         run: npm run lint --fix  
       - name: Create .env.dev
-        run: echo 'POKEAPI:${{ secrets.POKEAPI }}' >> .env.dev  
+        run: echo 'POKEAPI:${{ env.POKEAPI }}' >> .env.dev  
       - name: Imprime .env.dev
         run: cat .env.dev     
       - name: execute mode dev  
