@@ -1,14 +1,17 @@
 /// <reference types='Cypress'/>
 import Home from '../pages/home/Home';
-
 // import { mount } from '@cypress/vue';
 // import PokemonInfo from '../../src/components/home/PokemonInfo.vue';
 
 context('Iniciando Testes na Page Home da aplicação Pokedex', () => {
   const home = new Home();
   describe('Iniciando teste na Aplicação', () => {
-    it('Verificando se a aplicação está rodando', () => {
-      home.isOnLine();
+    it('Verificando se a aplicação está rodando', function() {
+      cy.fixture('homeData')
+        .as('data')
+        .then(() => {
+          home.isOnLine(this.data.title);
+        });
     });
     it('O botão "data-cy=alter-theme" deve alternar o tema da aplicação ao ser clicado', () => {
       // mount(PokemonInfo);
@@ -16,9 +19,13 @@ context('Iniciando Testes na Page Home da aplicação Pokedex', () => {
     });
   });
 
-  it('Verificando se o componente PokemonInfo está sendo renderizado', () => {
-    home.isOnLine();
-    home.isShowPokemonInfo();
+  it('Verificando se o componente PokemonInfo está sendo renderizado', function() {
+    cy.fixture('homeData')
+      .as('data')
+      .then(() => {
+        home.isOnLine(this.data.title);
+        home.isShowPokemonInfo();
+      });
   });
 
   describe('Pesquisando e adicionando Pokemons na lista de favoritos', () => {

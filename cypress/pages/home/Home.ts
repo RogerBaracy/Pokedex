@@ -2,10 +2,10 @@ import { ELEMENTS as e } from './model';
 const listNamesPokemons = ['Pikachu', 'Ditto', 'Abra'];
 
 export default class Home {
-  public isOnLine(): void {
-    cy.visit('/');
-    cy.wait(2000);
-    cy.title().should('equal', 'Pokedex App');
+  public isOnLine(title: string): void {
+    cy.visit('/');    
+        cy.wait(2000);
+        cy.title().should('equal', title);
   }
 
   public alterTheme(): void {
@@ -19,9 +19,11 @@ export default class Home {
   }
 
   public searchPokemon(): void {
-    listNamesPokemons.forEach((name) => {
+    listNamesPokemons.forEach(name => {
       it(`Pesquisando e adicionando o Pokemon ${name} na lista de favoritos`, () => {
-        cy.get(e.inputSearch).focus().type(name);
+        cy.get(e.inputSearch)
+          .focus()
+          .type(name);
         cy.get(e.btnSearch).click();
         cy.get(e.namePokemon, { timeout: 1000 }).contains(name);
         cy.get(e.btnAddFavorite).click();
@@ -35,10 +37,12 @@ export default class Home {
   }
 
   public checkPokemonsFavorites(): void {
-    listNamesPokemons.forEach((name) => {
+    listNamesPokemons.forEach(name => {
       it(`Verificando se o pokemon ${name} está na lista de favoritos`, () => {
         e.nameFavorite = name.toLowerCase();
-        cy.get(`${e.nameFavorite}`).should('exist').contains(name);
+        cy.get(`${e.nameFavorite}`)
+          .should('exist')
+          .contains(name);
       });
     });
   }

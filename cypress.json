@@ -1,5 +1,5 @@
 {
-    "baseUrl": "http://localhost:8080",
+    "baseUrl": "http://localhost:3003",
     "testFiles": [
         "Helpers.spec.ts",        
         "PokeAPI.spec.ts",

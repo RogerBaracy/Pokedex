@@ -1,0 +1,13 @@
+version: "3.8"
+
+services: 
+    app:
+        build: .
+        container_name: pokedex_app
+        command: npm run dev &
+        ports:
+            - "3003:3003"
+        volumes: 
+            - .:/usr/app  
+                
+              

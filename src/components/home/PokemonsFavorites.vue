@@ -18,7 +18,7 @@
           {{ f.name }}
         </p>
       </div>
-    </div>
+    </div>   
   </div>
 </template>
 
@@ -30,9 +30,10 @@ import { Ifavorite } from 'components/home/models';
 export default class PokemonsFavorites extends Vue {
   @PropSync('favorites', { type: Array })
   private _favorites!: Array<Ifavorite>;
+  private value = ''
 
   private deleteFavorite(id: number) {
-    const index = this._favorites.findIndex(f => {
+    const index = this._favorites.findIndex((f) => {
       return f.id == id;
     });
     this._favorites.splice(index, 1);
