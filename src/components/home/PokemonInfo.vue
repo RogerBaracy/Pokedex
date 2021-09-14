@@ -1,5 +1,6 @@
 <template>
   <div data-cy="component-pokemon-info">
+    <!-- teste deploy-->
     <ShowPokemon v-bind:id.sync="id" v-bind:name="name" v-bind:image="image" />
     <div class="row justify-center full-width q-mt-xl">
       <q-input
