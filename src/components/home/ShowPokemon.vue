@@ -8,6 +8,7 @@
       </div>
       <q-img v-bind:src="image" v-bind:alt="name" width="200px" />
       <q-icon
+        v-if="hasSupportSpeechSynthesisUtterance"
         name="volume_up"
         color="red"
         size="lg"
@@ -57,10 +58,20 @@ export default class ShowPokemon extends Vue {
   @PropSync('id', { type: Number })
   private _id!: number;
 
+  private hasSupportSpeechSynthesisUtterance = false;
+
   private speakPokemonName(name: string): void {
     const speakName = new SpeechSynthesisUtterance();
     speakName.text = name;
+    console.log(speakName)
     speechSynthesis.speak(speakName);
+  }
+
+  created() {
+    const speechSynthesisUtterance = window.SpeechSynthesisUtterance;
+    speechSynthesisUtterance
+      ? (this.hasSupportSpeechSynthesisUtterance = true)
+      : (this.hasSupportSpeechSynthesisUtterance = false);
   }
 }
 </script>
