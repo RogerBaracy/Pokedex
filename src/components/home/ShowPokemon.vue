@@ -7,6 +7,13 @@
         </h2>
       </div>
       <q-img v-bind:src="image" v-bind:alt="name" width="200px" />
+      <q-icon
+        name="volume_up"
+        color="red"
+        size="lg"
+        class="pointer"
+        @click="speakPokemonName(name)"
+      />
     </div>
     <div class="row">
       <div class="col-6">
@@ -49,5 +56,11 @@ export default class ShowPokemon extends Vue {
 
   @PropSync('id', { type: Number })
   private _id!: number;
+
+  private speakPokemonName(name: string): void {
+    const speakName = new SpeechSynthesisUtterance();
+    speakName.text = name;
+    speechSynthesis.speak(speakName);
+  }
 }
 </script>
