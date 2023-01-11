@@ -43,3 +43,7 @@ yarn-error.log*
 
 #runner-actions-github
 /actions-runner
+
+Dockerfile
+docker-compose.yaml
+
